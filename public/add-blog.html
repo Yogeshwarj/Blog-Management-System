@@ -4,45 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Blog</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Blog Management System</h1>
+<header>
 
-        <nav>
-            <a href="index.html">Home</a> |
-            <a href="add-blog.html">Add Blog</a>
-        </nav>
+    <h1>Blog Management System</h1>
 
-        <hr>
-    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="add-blog.html">Add Blog</a>
+    </nav>
 
-    <main>
+</header>
+
+<main>
+
+    <div class="form-container">
 
         <h2>Add New Blog</h2>
 
         <form>
 
-            <label for="title">Blog Title</label><br>
-            <input type="text" id="title" name="title"><br><br>
+            <label>Blog Title</label>
 
-            <label for="author">Author</label><br>
-            <input type="text" id="author" name="author"><br><br>
+            <input
+                type="text"
+                placeholder="Enter blog title">
 
-            <label for="content">Content</label><br>
-            <textarea id="content" name="content" rows="6" cols="40"></textarea><br><br>
+            <label>Author</label>
 
-            <button type="submit">Publish Blog</button>
+            <input
+                type="text"
+                placeholder="Enter author name">
+
+            <label>Content</label>
+
+            <textarea
+                rows="6"
+                placeholder="Write your blog here..."></textarea>
+
+            <button type="submit">
+                Publish Blog
+            </button>
 
         </form>
 
-    </main>
+    </div>
 
-    <footer>
-        <hr>
-        <p>&copy; 2026 Blog Management System</p>
-    </footer>
+</main>
+
+<footer>
+
+    <p>© 2026 Blog Management System</p>
+
+</footer>
 
 </body>
 </html>
