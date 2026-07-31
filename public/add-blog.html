@@ -25,31 +25,33 @@
 
         <h2>Add New Blog</h2>
 
-        <form>
+        <form id="blogForm">
 
-            <label>Blog Title</label>
+    <label>Blog Title</label>
+    <input
+        type="text"
+        id="title"
+        placeholder="Enter blog title">
 
-            <input
-                type="text"
-                placeholder="Enter blog title">
+    <label>Author</label>
+    <input
+        type="text"
+        id="author"
+        placeholder="Enter author name">
 
-            <label>Author</label>
+    <label>Content</label>
+    <textarea
+        id="content"
+        rows="6"
+        placeholder="Write your blog here..."></textarea>
 
-            <input
-                type="text"
-                placeholder="Enter author name">
+    <button type="submit">
+        Publish Blog
+    </button>
 
-            <label>Content</label>
+</form>
 
-            <textarea
-                rows="6"
-                placeholder="Write your blog here..."></textarea>
-
-            <button type="submit">
-                Publish Blog
-            </button>
-
-        </form>
+<p id="message"></p>
 
     </div>
 
@@ -60,6 +62,8 @@
     <p>© 2026 Blog Management System</p>
 
 </footer>
+
+<script src="js/script.js"></script>
 
 </body>
 </html>
