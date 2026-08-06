@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 // Serve frontend files
 app.use(express.static(path.join(__dirname, "public")));
 
-// Temporary blog data
+// Temporary JavaScript array for storing blogs
 let blogs = [
     {
         id: 1,
@@ -21,12 +21,12 @@ let blogs = [
     }
 ];
 
-// GET Route - Get all blogs
+// GET - Retrieve all blogs
 app.get("/api/blogs", (req, res) => {
     res.json(blogs);
 });
 
-// POST Route - Create a new blog
+// POST - Add a new blog
 app.post("/api/blogs", (req, res) => {
 
     const { title, author, content } = req.body;
@@ -39,9 +39,9 @@ app.post("/api/blogs", (req, res) => {
 
     const newBlog = {
         id: blogs.length + 1,
-        title,
-        author,
-        content
+        title: title.trim(),
+        author: author.trim(),
+        content: content.trim()
     };
 
     blogs.push(newBlog);
