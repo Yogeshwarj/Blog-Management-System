@@ -131,3 +131,7 @@ footer{
     font-weight: bold;
     margin-bottom: 10px;
 }
+
+.blog-card button {
+    margin-top: 10px;
+}

@@ -52,6 +52,37 @@ app.post("/api/blogs", (req, res) => {
     });
 });
 
+// PUT - Update an existing blog
+app.put("/api/blogs/:id", (req, res) => {
+
+    const blogId = parseInt(req.params.id);
+
+    const blog = blogs.find((blog) => blog.id === blogId);
+
+    if (!blog) {
+        return res.status(404).json({
+            message: "Blog not found"
+        });
+    }
+
+    const { title, author, content } = req.body;
+
+    if (!title || !author || !content) {
+        return res.status(400).json({
+            message: "All fields are required"
+        });
+    }
+
+    blog.title = title.trim();
+    blog.author = author.trim();
+    blog.content = content.trim();
+
+    res.json({
+        message: "Blog updated successfully",
+        blog: blog
+    });
+});
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
