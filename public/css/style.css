@@ -135,3 +135,103 @@ footer{
 .blog-card button {
     margin-top: 10px;
 }
+
+./* ================================
+   DAY 11 - UI ANIMATIONS & EFFECTS
+   ================================ */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Page entrance animation */
+body {
+    animation: pageFadeIn 0.7s ease-in-out;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Blog cards */
+.blog-card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    animation: cardFadeIn 0.6s ease forwards;
+}
+
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Buttons */
+button {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Navigation links */
+nav a {
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+}
+
+/* Form fields */
+input,
+textarea {
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.12);
+}
+
+/* Footer */
+footer {
+    transition: opacity 0.3s ease;
+}
+
+footer:hover {
+    opacity: 0.85;
+}
