@@ -37,6 +37,9 @@ async function loadBlogs() {
                 <button onclick="editBlog(${blog.id})">
                     Edit
                 </button>
+                <button onclick="deleteBlog(${blog.id})">
+                    Delete
+                </button>
             `;
 
             blogContainer.appendChild(blogCard);
@@ -130,5 +133,41 @@ async function editBlog(id) {
     }
 }
 
+async function deleteBlog(id) {
+
+    const confirmDelete = confirm(
+        "Are you sure you want to delete this blog?"
+    );
+
+    if (!confirmDelete) {
+        return;
+    }
+
+    try {
+
+        const response = await fetch(`/api/blogs/${id}`, {
+            method: "DELETE"
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+
+            alert("Blog deleted successfully!");
+
+            loadBlogs();
+
+        } else {
+
+            alert(result.message);
+        }
+
+    } catch (error) {
+
+        console.error("Error deleting blog:", error);
+
+        alert("Unable to delete blog.");
+    }
+}
 
 loadBlogs();
