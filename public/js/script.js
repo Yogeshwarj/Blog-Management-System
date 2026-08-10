@@ -9,7 +9,6 @@ form.addEventListener("submit", async function (event) {
 
     event.preventDefault();
 
-    // Frontend validation
     if (
         title.value.trim() === "" ||
         author.value.trim() === "" ||
@@ -51,14 +50,15 @@ form.addEventListener("submit", async function (event) {
 
             message.textContent = data.message;
             message.style.color = "red";
-
         }
 
     } catch (error) {
 
-        message.textContent = "Unable to publish blog.";
-        message.style.color = "red";
+        console.error("Error:", error);
 
-        console.error(error);
+        message.textContent =
+            "Unable to connect to the server.";
+
+        message.style.color = "red";
     }
 });
